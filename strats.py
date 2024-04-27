@@ -1,11 +1,11 @@
 from dices import Dices
 
-def points_calculator(dices):
+def points_calculator(dices):    
     dices_pair = dices.get_dices()
     if 4 in dices_pair:
         return dices_pair[0] if dices_pair[1] == 4 else dices_pair[1]
-    else:
-        return 0
+    
+    return 0
 
 def maria_strategy(juan_points, simulation = False):
     maria_dices = Dices()
@@ -19,7 +19,7 @@ def maria_strategy(juan_points, simulation = False):
     # Hizo más puntos, frena ahí
     if maria_points > juan_points:
         return maria_points
-    elif maria_points < juan_points or juan_points <= 3:
+    if maria_points < juan_points or juan_points <= 3:
             maria_dices.rethrow_one()
             maria_points = points_calculator(maria_dices)
     return maria_points
@@ -27,9 +27,8 @@ def maria_strategy(juan_points, simulation = False):
 def juan_strategy():
     juan_dices = Dices()
     juan_points = points_calculator(juan_dices)
-    if(juan_points > 3):
-        return juan_points
-    else:
+    if juan_points <= 3:
         juan_dices.rethrow_one() if juan_points > 0 else juan_dices.rethrow_both()
         juan_points = points_calculator(juan_dices)
-        return juan_points
+    
+    return juan_points
