@@ -2,10 +2,11 @@
 
 ## Clase Dices
 
+La clase `Dices` modela un par de dados para el juego.
+
 <details>
 <summary>Expandir</summary>
 
-La clase `Dices` modela un par de dados para el juego.
 
 ### Métodos
 
@@ -29,11 +30,14 @@ Vuelve a tirar ambos dados, asignando nuevos valores aleatorios a cada uno.
 
 ## strats.py
 
+Contiene las funciones que implementan las estrategias de cada jugador.
+
 <details>
 <summary>Expandir</summary>
+
 ### `points_calculator(dices)`
 
-Esta función calcula los puntos obtenidos en una tirada de dados.
+Calcula y devuelve los puntos obtenidos en una tirada de dados.
 
 - `dices`: Un objeto que representa los dados lanzados.
 
@@ -41,18 +45,20 @@ Esta función calcula los puntos obtenidos en una tirada de dados.
 
 Implementa la estrategia de Juan para jugar.
 
-- `simulation_sequence`: Una lista opcional donde se registran las secuencias de tiradas simuladas.
+- `simulation_sequence`: Una lista opcional. En caso de querer simular la partida, se modificará la lista pasada para registrar las secuencias de tiradas.
 
 ### `maria_strategy(juan_points, simulation_sequence=[])`
 
 Implementa la estrategia de María para jugar.
 
-- `juan_points`: Los puntos obtenidos por Juan en su tirada actual.
-- `simulation_sequence`: Una lista opcional donde se registran las secuencias de tiradas simuladas.
+- `juan_points`: Los puntos obtenidos por Juan en su última tirada.
+- `simulation_sequence`: Una lista opcional. En caso de querer simular la partida, se modificará la lista pasada para registrar las secuencias de tiradas.
 
 </details>
 
 ## simulations.py
+
+Funciones para simular el diálogo de los dos jugadores en una ronda.
 
 <details>
 <summary>Expandir</summary>
@@ -73,6 +79,8 @@ Imprime en consola la simulación de la secuencia que siguió María.
 </details>
 
 ## main.py
+
+Funciones que engloban el uso de todas las demás, para simular distintas posibilidades del juego.
 
 <details>
 <summary>Expandir</summary>
