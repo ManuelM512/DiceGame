@@ -1,8 +1,9 @@
 # DiceGame
 
-## Funciones
+## Clase Dices
 
-## Clase `Dices`
+<details>
+<summary>Expandir</summary>
 
 La clase `Dices` modela un par de dados para el juego.
 
@@ -24,8 +25,12 @@ Vuelve a tirar uno de los dados. Si el primer dado es 4, se vuelve a tirar el se
 
 Vuelve a tirar ambos dados, asignando nuevos valores aleatorios a cada uno.
 
+</details>
+
 ## strats.py
 
+<details>
+<summary>Expandir</summary>
 ### `points_calculator(dices)`
 
 Esta función calcula los puntos obtenidos en una tirada de dados.
@@ -45,7 +50,12 @@ Implementa la estrategia de María para jugar.
 - `juan_points`: Los puntos obtenidos por Juan en su tirada actual.
 - `simulation_sequence`: Una lista opcional donde se registran las secuencias de tiradas simuladas.
 
+</details>
+
 ## simulations.py
+
+<details>
+<summary>Expandir</summary>
 
 ### `juan_simulation(sequence)`
 
@@ -60,3 +70,31 @@ Imprime en consola la simulación de la secuencia que siguió María.
 - `sequence`: Secuencia de tiradas de dados de María
 - `juan_points`: Puntos de Juan en esa ronda
 
+</details>
+
+## main.py
+
+<details>
+<summary>Expandir</summary>
+
+### Funciones de Juego
+
+Estas funciones facilitan la ejecución y la simulación del juego:
+
+#### `play_one_round()`
+
+Juega una ronda del juego entre Juan y María y devuelve al ganador de la ronda, o None en caso de empate.
+
+#### `play_n_rounds(rounds_amount)`
+
+Juega un número especificado de rondas y devuelve un diccionario que contiene el recuento de victorias de Juan, María y empates.
+
+#### `play_n_matches(rounds, matches)`
+
+Juega un número especificado de partidas, cada una consistiendo de un número especificado de rondas. Devuelve un diccionario que contiene el recuento de victorias de Juan, María y empates en todas las partidas.
+
+#### `simulate_game()`
+
+Simula una ronda entre Juan y María, mostrando su diálogo, registrando las secuencias de tiradas de cada jugador, y devuelve el ganador o empate.
+
+</details>
