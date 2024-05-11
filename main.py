@@ -21,6 +21,27 @@ def play_n_rounds(rounds_amount):
     return rounds_victories
 
 
+def report_generator(rounds_victories):
+    maria_r = rounds_victories["María"]
+    juan_r = rounds_victories["Juan"]
+    empate_r = rounds_victories["Empate"]
+    rounds_amount = maria_r + juan_r + empate_r
+    maria_frec = maria_r / rounds_amount
+    juan_frec = juan_r / rounds_amount
+    empate_frec = empate_r / rounds_amount
+    victories_string = (
+        f"Total de rondas: {rounds_amount}\n\n"
+        + f"María ganó:      {maria_r}\n"
+        + f"Juan ganó:       {juan_r}\n"
+        + f"Empataron:       {empate_r}\n\n"
+        + f"Frecuencia relativa de María:  {maria_frec}\n"
+        + f"Frecuencia relativa de Juan:   {juan_frec}\n"
+        + f"Frecuencia relativa de Empate: {empate_frec}\n\n"
+        + f"Diferencia María a Juan: {str(maria_frec-juan_frec)[0:6]}\n"
+    )
+    return victories_string
+
+
 def play_n_matches(matches, rounds):
     stats = {"Juan": 0, "María": 0, "Empate": 0}
     for _ in range(matches):
@@ -56,13 +77,14 @@ def simulate_game():
     return result
 
 
-# TODO: Calcular frecuencia relativa de ganar María o Juan
-
 # Este correspondería a la parte 5 del trabajo
-# print(play_n_rounds(1000))
-# print(play_n_rounds(10000))
-# print(play_n_rounds(100000))
+# rounds = play_n_rounds(1000))
+# rounds = play_n_rounds(10000))
+rounds = play_n_rounds(100000)
+print(report_generator(rounds))
 
+# n partidos de m rondas cada uno 
 # print(play_n_matches(10, 10000))
 
+# Con este se puede simular una jugada
 # simulate_game()
