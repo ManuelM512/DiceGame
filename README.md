@@ -95,11 +95,22 @@ Juega una ronda del juego entre Juan y María y devuelve al ganador de la ronda,
 
 #### `play_n_rounds(rounds_amount)`
 
+- `rounds_amount`: Cantidad de rondas a jugar
+
 Juega un número especificado de rondas y devuelve un diccionario que contiene el recuento de victorias de Juan, María y empates.
 
-#### `play_n_matches(rounds, matches)`
+#### `play_n_matches(matches, rounds)`
+
+- `matches`: Cantidad de partidas a jugar
+- `rounds`: Cantidad de rondas a jugar en cada partida
 
 Juega un número especificado de partidas, cada una consistiendo de un número especificado de rondas. Devuelve un diccionario que contiene el recuento de victorias de Juan, María y empates en todas las partidas.
+
+#### `report_generator(rounds_victories)`
+
+- `rounds_victories`: Diccionario con claves María, Juan y Empate, y por valores la cantidad de rondas que se llevó cada uno.
+
+Para un diccionario con claves María, Juan y Empate, devuelve un string con la cantidad de victorias de c/u, y sus frecuencias relativas.
 
 #### `simulate_game()`
 
