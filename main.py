@@ -1,6 +1,5 @@
-from dices import Dices
-from strats import *
-from simulations import *
+from strats import juan_strategy, maria_strategy
+from simulations import juan_simulation, maria_simulation
 
 
 def play_one_round():
@@ -25,13 +24,13 @@ def report_generator(rounds_victories):
     maria_r = rounds_victories["María"]
     juan_r = rounds_victories["Juan"]
     empate_r = rounds_victories["Empate"]
-    
+
     rounds_amount = maria_r + juan_r + empate_r
-    
+
     maria_frec = maria_r / rounds_amount
     juan_frec = juan_r / rounds_amount
     empate_frec = empate_r / rounds_amount
-    
+
     victories_string = (
         f"Total de rondas: {rounds_amount}\n\n"
         + f"María ganó:      {maria_r}\n"
@@ -40,7 +39,7 @@ def report_generator(rounds_victories):
         + f"Frecuencia relativa de María:  {maria_frec}\n"
         + f"Frecuencia relativa de Juan:   {juan_frec}\n"
         + f"Frecuencia relativa de Empate: {empate_frec}\n\n"
-        + f"Diferencia de frecuencia de María a Juan:"
+        + "Diferencia de frecuencia de María a Juan:"
         + f" {str(maria_frec-juan_frec)[0:6]}\n"
     )
     return victories_string
