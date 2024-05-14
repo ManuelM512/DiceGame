@@ -44,7 +44,7 @@ def maria_simulation(sequence, juan_points):
                     "Es difícil que le gane a Juan si vuelvo a tirar solo este dado, mejor freno aquí"
                 )
         else:
-            print(f"Hice más puntos que Juan")
+            print("Hice más puntos que Juan")
     else:
         if points == 0:
             print("Volveré a tirar ambos")

@@ -81,8 +81,10 @@ def simulate_game():
 
 
 # Este correspondería a la parte 5 del trabajo
-# rounds = play_n_rounds(1000))
-# rounds = play_n_rounds(10000))
+rounds = play_n_rounds(1000)
+print(report_generator(rounds))
+rounds = play_n_rounds(10000)
+print(report_generator(rounds))
 rounds = play_n_rounds(100000)
 print(report_generator(rounds))
 
